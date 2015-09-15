@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'home/profile'
 
+  get 'auth/:provider/callback' => 'sessions#create'
+
+  delete 'sign_out' => 'sessions#destroy', as: 'sign_out'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
